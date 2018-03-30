@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#sign_ok").click(function(){
+                var sign_form=document.getElementById('sign_form')
+                $(sign_form).submit();
+            });
+        });
+        </script>
+
+        <style>
+            .header1 {
+              padding: 10px 5px;
+              text-align: left;
+              font-family: sans-serif;
+              font-weight:bold;
+              background: #fff;
+              color: #888;
+            }
+
+            .header2 {
+              padding: 10px 5px;
+              text-align: left;
+              font-family: sans-serif;
+              font-weight:bold;
+              background: #fff;
+              color: #888;
+            }
+
+            .sign_button {
+              padding: 10px;
+              width: 15%;
+              border: 0;
+              outline: 0;
+              background: #d9d9d9;
+              color: #555;
+              float: left;
+              text-align: center;
+              font-size: 16px;
+              cursor: pointer;
+              transition: 0.3s;
+              font-family: sans-serif;
+              font-weight:bold;
+            }
+
+            .sign_button:hover {
+                 background-color: #bbb;
+            }
+            
+
+        </style>
+
+    </HEAD>
+    <BODY>
+        <h1>회원가입 페이지</h1>
+
+        <br><br>
+        
+        <form id="sign_form" method="POST" action="sign_ok.php">
+            <table border=0>
+                <tr>
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        <input type="edit" class="header1" name="sign_id" value="아이디를 입력하세요" size=100/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PASS
+                    </td>
+                    <td>
+                        <input type="password" class="header2" name="sign_pass" value="비밀번호를 입력하세요" size=100/>
+                    </td>
+                </tr>
+            </table>
+            <input type="button" class="sign_button" id="sign_ok" value="가입하기"/>
+        </form>
+    </BODY>
+</HTML>

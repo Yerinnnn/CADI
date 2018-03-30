@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <HEAD>
+        <meta charset="utf-8">
+        <SCRIPT>
+
+                window.onload = function(){
+                    var getRandomNumberId = document.getElementById("randomNumber");
+                    var randomNumber = Math.floor(Math.random()*1000000 +1);
+    
+                    getRandomNumberId.innerHTML = randomNumber;
+    
+                    getLoginButtonId.onclick = function()
+                    {
+                        LoginEvent();
+                    }
+    
+                    var LoginEvent = function(){
+                        var getRandomNumberInputId = document.getElementById("randomNumberInput");
+                        var getUserNumberValue = getRandomNumberInputId.value;
+    
+                        if ( randomNumber == getUserNumberValue ){
+                            getLoginFormId.submit();
+                        }
+                        else{
+                            alert("입력한 숫자다릅니다.");
+                            getLoginFormId.reset();
+                        }
+                    }
+                }
+
+
+                $(document).ready(function(){
+                    $("#login_ok").click(function(){
+                        var login_form = document.getElementById('login_form')
+                            $(login_form).submit();
+                    });
+                });                
+              
+            </SCRIPT>
+
+                    
+    
+
+        <style>
+            .header1 {
+              padding: 10px 5px;
+              text-align: left;
+              font-family: sans-serif;
+              font-weight:bold;
+              background: #fff;
+              color: #888;
+            }
+
+            .header2 {
+              padding: 10px 5px;
+              text-align: left;
+              font-family: sans-serif;
+              font-weight:bold;
+              background: #fff;
+              color: #888;
+            }
+
+            .header3 {
+              padding: 10px 5px;
+              text-align: left;
+              font-family: sans-serif;
+              font-weight:bold;
+              background: #fff;
+              color: #888;
+            }
+
+            .login_button {
+              padding: 10px;
+              width: 15%;
+              border: 0;
+              outline: 0;
+              background: #d9d9d9;
+              color: #555;
+              float: left;
+              text-align: center;
+              font-size: 16px;
+              cursor: pointer;
+              transition: 0.3s;
+              font-family: sans-serif;
+              font-weight:bold;
+            }
+
+            .login_button:hover {
+                 background-color: #bbb;
+            }
+            
+
+        </style>
+
+    </HEAD>
+    <BODY>
+        <h1>로그인 페이지</h1>
+
+        <br><br>
+        
+        <form id="login_form" method="POST" action="login_ok.php">
+            <table border=0>
+                <tr>
+                    <td>
+                        ID
+                    </td>
+                    <td>
+                        <input class="header1" type="edit" name="sign_id" size=100 value="아이디를 입력하세요"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        PASS
+                    </td>
+                    <td>
+                        <input class="header2" type="password" name="sign_pass" size=100 value="비밀번호를 입력하세요"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2>
+                        보이는대로 입력해주세요.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="randomNumber"></div>
+                    </td>
+                    <td>
+                        <input class="header2" type="text" id="randomNumberInput" size=20/>
+                    </td>
+                </tr>
+            </table>
+            <input class="login_button" type="button" id="login_ok" onclick="LoginEvent()" value="로그인"/>
+        </form>
+    </BODY>
+</HTML>
