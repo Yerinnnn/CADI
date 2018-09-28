@@ -1,299 +1,324 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-#mainName {font-family: Arial;}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #mainName {
+            font-family: Arial;
+        }
 
-table{
-    font-family: sans-serif;
-    font-weight: 100;
-}
+        table {
+            font-family: sans-serif;
+            font-weight: 100;
+        }
 
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
+        /* Style the tab */
 
-/* Style the buttons inside the tab */
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-}
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
-}
+        /* Style the buttons inside the tab */
 
-/* Create an active/current tablink class */
-.tab button.active {
-    background-color: #ccc;
-}
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
 
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px /*solid #ccc;*/
-    border-top: none;
-}
+        /* Change background color of buttons on hover */
 
+        .tab button:hover {
+            background-color: #ddd;
+        }
 
+        /* Create an active/current tablink class */
 
-#tab_right {
-  float: right;
-}
+        .tab button.active {
+            background-color: #ccc;
+        }
 
-.addBtn {
-  width: 120px;
-  height: 40px;
-  border: 0px;
-  outline: 0px;
-  background: #d9d9d9;
-  color: #555;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+        /* Style the tab content */
 
-.addBtn:hover {
-  background-color: #bbb;
-}
-
-#myInput {
-  border: none;
-  width: 400px;
-  height: 20px;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-  background-color:rgb(238, 238, 238);
-}
-
-#map {
-    height: 450px;
-    width: 600px;
-}
-
-#drop {
-  width: 120px;
-  height: 30px;
-  border: 0px;
-  outline: 0px;
-  background: #d9d9d9;
-  color: #555;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#drop:hover {
-  background-color: #bbb;
-}
-
-#home{
-  width: 120px;
-  height: 48px;
-  border: 0px;
-  outline: 0px;
-  background: #d9d9d9;
-  color: rgb(59, 59, 59);
-  text-align: center;
-  font-size: 17px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
- a:link { color: black; text-decoration: none;}
- a:visited { color: black; text-decoration: none;}
- a:hover { color: black; text-decoration: none;}
-
-
-.login{
-  width: 120px;
-  height: 40px;
-  border: 0px;
-  outline: 0px;
-  background: #d9d9d9;
-  color: #555;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.login:hover {
-  background-color: #bbb;
-}
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px/*solid #ccc;*/
+            border-top: none;
+        }
 
 
 
-</style>
+        #tab_right {
+            float: right;
+        }
+
+        .addBtn {
+            width: 120px;
+            height: 40px;
+            border: 0px;
+            outline: 0px;
+            background: #d9d9d9;
+            color: #555;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .addBtn:hover {
+            background-color: #bbb;
+        }
+
+        #myInput {
+            border: none;
+            width: 400px;
+            height: 20px;
+            padding: 10px;
+            float: left;
+            font-size: 16px;
+            background-color: rgb(238, 238, 238);
+        }
+
+        #map {
+            height: 450px;
+            width: 600px;
+        }
+
+        #drop {
+            width: 120px;
+            height: 30px;
+            border: 0px;
+            outline: 0px;
+            background: #d9d9d9;
+            color: #555;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #drop:hover {
+            background-color: #bbb;
+        }
+
+        #home {
+            width: 120px;
+            height: 48px;
+            border: 0px;
+            outline: 0px;
+            background: #d9d9d9;
+            color: rgb(59, 59, 59);
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+
+        .login {
+            width: 120px;
+            height: 40px;
+            border: 0px;
+            outline: 0px;
+            background: #d9d9d9;
+            color: #555;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login:hover {
+            background-color: #bbb;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1 id=mainName>MY PAGE</h1>
+    <h1 id=mainName>MY PAGE</h1>
 
-<div class="tab">
-  <button class="tablinks" id="home" onclick="openTab(event, 'HOME')">HOME</button>
-  <button class="tablinks" onclick="openTab(event, 'Yerin')">&nbsp;&nbsp;ME&nbsp;&nbsp;</button>
-  <button class="tablinks" onclick="openTab(event, 'todolist')">TO DO LIST</button>
-  <button class="tablinks" onclick="openTab(event, 'about')">About</button>
-</div>
-
-
-
-
-
-<div id="HOME" class="tabcontent">
-    <img src='1.jpg' width='400px' />
-</div>
+    <div class="tab">
+        <button class="tablinks" id="home" onclick="openTab(event, 'HOME')">HOME</button>
+        <button class="tablinks" onclick="openTab(event, 'Yerin')">&nbsp;&nbsp;ME&nbsp;&nbsp;</button>
+        <button class="tablinks" onclick="openTab(event, 'todolist')">TO DO LIST</button>
+        <button class="tablinks" onclick="openTab(event, 'about')">About</button>
+    </div>
 
 
 
 
 
-
-<div id="Yerin" class="tabcontent">
-    <h3>자기소개</h3>
-<table>
-    <tr align='left'>
-        <th>이름</th>
-        <th>신예린</th>
-    </tr>
-    <tr align='left'>
-        <th>생년월일</th>
-        <th>99.02.16</th>
-    </tr>
-    <tr align='left'>
-        <th>학력</th>
-        <th>평택대학교 재학</th>
-    </tr>
-</table>
-<div> </div>
-
-<div id="floating-panel">
-        <button id="drop" onclick="drop()">Drop Markers</button>
-  <div id="map"></div>
-  </div>
-</div>
+    <div id="HOME" class="tabcontent">
+        <img src='1.jpg' width='400px' />
+    </div>
 
 
 
 
 
 
-<div id="todolist" class="tabcontent">
-  <h3>TO DO LIST</h3>
-  <input type="text" id="myInput" placeholder="해야할 일을 적어보세요!">
-  <button onclick="newElement()" class="addBtn">추가하기</button>
-  <ul id="myUL" class="myUL">
+    <div id="Yerin" class="tabcontent">
+        <h3>자기소개</h3>
+        <table>
+            <tr align='left'>
+                <th>이름</th>
+                <th>신예린</th>
+            </tr>
+            <tr align='left'>
+                <th>생년월일</th>
+                <th>99.02.16</th>
+            </tr>
+            <tr align='left'>
+                <th>학력</th>
+                <th>평택대학교 재학</th>
+            </tr>
+        </table>
+        <div> </div>
 
-  </ul>
-</div>
-
-
-
-
-<div id="about" class="tabcontent">
-    <h3>LOGIN/SIGN</h3>
-    <button class="login"><a href="./login.html">로그인하기</a></button>
-    <button class='login'><a href="./sign.html">회원가입하기</a></button>
-  </div>
-
-
-
-
-<script>
-//탭 열기
-function openTab(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
+        <div id="floating-panel">
+            <button id="drop" onclick="drop()">Drop Markers</button>
+            <div id="map"></div>
+        </div>
+    </div>
 
 
-/////////////////////////////////////////////////////// TO DO LIST 추가하기버튼
-    function newElement() {
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var t = document.createTextNode(inputValue);
-        li.appendChild(t);
-    
 
-    if (inputValue === '') {
-        alert("무엇이라도 적어주세요!");
-    } else {
-        document.getElementById("myUL").appendChild(li);
+
+
+
+    <div id="todolist" class="tabcontent">
+        <h3>TO DO LIST</h3>
+        <input type="text" id="myInput" placeholder="해야할 일을 적어보세요!">
+        <button onclick="newElement()" class="addBtn">추가하기</button>
+        <ul id="myUL" class="myUL">
+
+        </ul>
+    </div>
+
+
+
+
+    <div id="about" class="tabcontent">
+        <h3>LOGIN/SIGN</h3>
+        <button class="login">
+            <a href="./login.html">로그인하기</a>
+        </button>
+        <button class="login">
+            <a href="./sign.html">회원가입하기</a>
+        </button>
+    </div>
+
+
+
+
+    <script>
+        //탭 열기
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
 
-    document.getElementById("myInput").value = "";
-    }
+
+        /////////////////////////////////////////////////////// TO DO LIST 추가하기버튼
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
 
 
-////////////////////////////////////////////////////////////구글맵
-    var neighborhoods = [
-        {lat:37.2648899, lng: 127.21603440000001}
-    ];
+            if (inputValue === '') {
+                alert("무엇이라도 적어주세요!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
 
-
-    var markers = [];
-    var map;
-
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 16,
-            center: {lat: 37.2648788, lng: 127.21603440000001}
-        });
-    }
-
-    function drop() {
-        clearMarkers();
-        for (var i = 0; i < neighborhoods.length; i++) {
-          addMarkerWithTimeout(neighborhoods[i], i * 200);
+            document.getElementById("myInput").value = "";
         }
-    }
 
-    function addMarkerWithTimeout(position, timeout) {
-        window.setTimeout(function() {
-          markers.push(new google.maps.Marker({
-            position: position,
-            map: map,
-            animation: google.maps.Animation.DROP
-          }));
-        }, timeout);
-    }
 
-    function clearMarkers() {
-        for (var i = 0; i < markers.length; i++) {
-          markers[i].setMap(null);
+        ////////////////////////////////////////////////////////////구글맵
+        var neighborhoods = [{
+            lat: 37.2648899,
+            lng: 127.21603440000001
+        }];
+
+
+        var markers = [];
+        var map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: {
+                    lat: 37.2648788,
+                    lng: 127.21603440000001
+                }
+            });
         }
-        markers = [];
-    }
 
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwweHDII94rJaV53n1fb5nuX3OO3KfHv4&callback=initMap"
-    async defer></script>
+        function drop() {
+            clearMarkers();
+            for (var i = 0; i < neighborhoods.length; i++) {
+                addMarkerWithTimeout(neighborhoods[i], i * 200);
+            }
+        }
+
+        function addMarkerWithTimeout(position, timeout) {
+            window.setTimeout(function () {
+                markers.push(new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    animation: google.maps.Animation.DROP
+                }));
+            }, timeout);
+        }
+
+        function clearMarkers() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwweHDII94rJaV53n1fb5nuX3OO3KfHv4&callback=initMap" async
+        defer></script>
 </body>
-</html> 
+
+</html>

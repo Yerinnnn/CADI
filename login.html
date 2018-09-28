@@ -1,138 +1,176 @@
 <!DOCTYPE HTML>
 
 <HTML>
-    <HEAD>
-        <meta charset="utf-8">
-        <SCRIPT>
 
-                window.onload = function(){
-                    var getRandomNumberId = document.getElementById("randomNumber");
-                    var randomNumber = Math.floor(Math.random()*1000000 +1);
-    
-                    getRandomNumberId.innerHTML = randomNumber;
-    
-                    getLoginButtonId.onclick = function()
-                    {
-                        LoginEvent();
-                    }
-    
-                    var LoginEvent = function(){
-                        var getRandomNumberInputId = document.getElementById("randomNumberInput");
-                        var getUserNumberValue = getRandomNumberInputId.value;
-    
-                        if ( randomNumber == getUserNumberValue ){
-                            getLoginFormId.submit();
-                        }
-                        else{
-                            alert("입력한 숫자다릅니다.");
-                            getLoginFormId.reset();
-                        }
-                    }
+<HEAD>
+    <meta charset="utf-8">
+    <SCRIPT>
+        window.onload = function () {
+            var getRandomNumberId = document.getElementById("randomNumber");
+            var randomNumber = Math.floor(Math.random() * 1000000 + 1);
+
+            getRandomNumberId.innerHTML = randomNumber;
+
+
+            var getLoginButtonId = document.getElementById("login_ok");
+
+            getLoginButtonId.onclick = function () {
+                LoginEvent();
+            }
+
+            var LoginEvent = function () {
+                var getRandomNumberInputId = document.getElementById("randomNumberInput");
+                var getUserNumberValue = getRandomNumberInputId.value; //받은 숫자 값을 변수에 넣음
+                var getLoginFormId = document.getElementById("login_ok");
+
+                if (randomNumber == getUserNumberValue) { //받은 숫자와 랜덤 넘버 비교
+                    getLoginFormId.submit();
+                } else {
+                    alert("입력한 숫자가 다릅니다.");
+                    getLoginFormId.reset();
                 }
-
-
-                $(document).ready(function(){
-                    $("#login_ok").click(function(){
-                        var login_form = document.getElementById('login_form')
-                            $(login_form).submit();
-                    });
-                });                
-              
-            </SCRIPT>
-
-                    
-    
-
-        <style>
-            .header1 {
-              padding: 10px 5px;
-              text-align: left;
-              font-family: sans-serif;
-              font-weight:bold;
-              background: #fff;
-              color: #888;
             }
+        }
 
-            .header2 {
-              padding: 10px 5px;
-              text-align: left;
-              font-family: sans-serif;
-              font-weight:bold;
-              background: #fff;
-              color: #888;
-            }
 
-            .header3 {
-              padding: 10px 5px;
-              text-align: left;
-              font-family: sans-serif;
-              font-weight:bold;
-              background: #fff;
-              color: #888;
-            }
+        $(document).ready(function () {
+            $("#login_ok").click(function () { //login_ok 버튼 클릭 시 함수 실행
+                var login_form = document.getElementById('login_form');
+                $(login_form).submit();
+            });
+        });
+    </SCRIPT>
 
-            .login_button {
-              padding: 10px;
-              width: 15%;
-              border: 0;
-              outline: 0;
-              background: #d9d9d9;
-              color: #555;
-              float: left;
-              text-align: center;
-              font-size: 16px;
-              cursor: pointer;
-              transition: 0.3s;
-              font-family: sans-serif;
-              font-weight:bold;
-            }
+    <!--경고문구
+<script>
+    var getInputId = document.getElementById("inputId");
+var getInputPass = document.getElementById("inputPass");
 
-            .login_button:hover {
-                 background-color: #bbb;
-            }
-            
+if (getInputId.value == NULL) {
+    alert("아이디를 입력해주세요!");
+}
+else if(getInputPass.value == NULL) {
+    alert("비밀번호를 입력해주세요!");
+}
+else((getInputId.value && getInputPass.value) == NULL) {
+    alert("아이디와 비밀번호를 입력해주세요!")
+}
+    </script>
+    -->
 
-        </style>
+    <style>
+        #header {
+            text-align: center;
+            padding: 25px;
+        }
 
-    </HEAD>
-    <BODY>
-        <h1>로그인 페이지</h1>
+        #signPage_div {
+            text-align: right;
+        }
 
-        <br><br>
-        
+        #signPage:hover {
+            color: rgb(130, 130, 130);
+        }
+
+        #signPage {
+            color: rgb(40, 40, 40);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .inputBox {
+            padding: 10px 20px;
+            margin: 10px;
+            width: 350px;
+            height: 30px;
+            text-align: left;
+            font-family: sans-serif;
+            font-weight: bold;
+            background: #fff;
+            color: #888;
+        }
+
+        .button {
+            width: 450px;
+            height: 55px;
+            border: 0px;
+            outline: 0px;
+            background: #d9d9d9;
+            color: #555;
+            float: left;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #bbb;
+        }
+
+        #form {
+            margin-right: auto;
+            margin-left: auto;
+            width: 500px;
+
+        }
+
+        .formDiv {
+            padding: 5px;
+            width: 300px;
+        }
+
+        .formDiv p {
+            font-size: 13px;
+        }
+    </style>
+
+</HEAD>
+
+<BODY>
+    <div id="form">
+        <div id="signPage_div">
+            <a href="./sign.html" id="signPage">회원가입</a>
+        </div>
+        <div id="header">
+            <h1>로그인 페이지</h1>
+        </div>
+
         <form id="login_form" method="POST" action="login_ok.php">
-            <table border=0>
-                <tr>
-                    <td>
-                        ID
-                    </td>
-                    <td>
-                        <input class="header1" type="edit" name="sign_id" size=100 value="아이디를 입력하세요"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        PASS
-                    </td>
-                    <td>
-                        <input class="header2" type="password" name="sign_pass" size=100 value="비밀번호를 입력하세요"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan=2>
-                        보이는대로 입력해주세요.
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div id="randomNumber"></div>
-                    </td>
-                    <td>
-                        <input class="header2" type="text" id="randomNumberInput" size=20/>
-                    </td>
-                </tr>
-            </table>
-            <input class="login_button" type="button" id="login_ok" onclick="LoginEvent()" value="로그인"/>
+            <div class="formDiv">
+                <span>ID</span>
+                <span class="formBox">
+                    <input class="inputBox" id="inputId" type="edit" name="sign_id" value="아이디를 입력하세요" style="display: block;" />
+                </span>
+            </div>
+            <div class="formDiv">
+                <span>PASS</span>
+                <span class="formBox">
+                    <input class="inputBox" id="inputPass" type="password" name="sign_pass" value="비밀번호를 입력하세요" />
+                </span>
+            </div>
+            <div class="formDiv">
+                <p>보이는대로 입력해주세요.</p>
+                <span id="randomNumber" class="formBox"></span>
+            </div>
+
+
+
+            <div class="formDiv">
+                <span>
+                    <input class="inputBox" type="text" id="randomNumberInput" size=30/>
+                </span>
+            </div>
+
+            <div>
+                <input type="submit" class="button" id="login_ok" onclick="LoginEvent()" title="로그인" alt="로그인" value="로그인" />
+            </div>
+
         </form>
-    </BODY>
+    </div>
+
+</BODY>
+
 </HTML>
