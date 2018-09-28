@@ -61,9 +61,23 @@ else((getInputId.value && getInputPass.value) == NULL) {
     <style>
         #header {
             text-align: center;
-            padding: 25px;
+            padding: 10px;
         }
 
+
+
+/*전체 폼 div태그*/
+
+#form {
+            margin-right: auto;
+            margin-left: auto;
+            width: 500px;
+            float: center;
+
+        }
+
+
+/*회원가입 링크*/
         #signPage_div {
             text-align: right;
         }
@@ -78,9 +92,12 @@ else((getInputId.value && getInputPass.value) == NULL) {
             font-size: 14px;
         }
 
+
+/*입력칸*/
         .inputBox {
             padding: 10px 20px;
-            margin: 10px;
+            margin: 5px 50px;
+            float: right;
             width: 350px;
             height: 30px;
             text-align: left;
@@ -90,14 +107,16 @@ else((getInputId.value && getInputPass.value) == NULL) {
             color: #888;
         }
 
+/*로그인 버튼*/
         .button {
             width: 450px;
             height: 55px;
             border: 0px;
+            margin: 20px 25px;
             outline: 0px;
             background: #d9d9d9;
             color: #555;
-            float: left;
+            float: center;
             text-align: center;
             font-size: 16px;
             cursor: pointer;
@@ -110,21 +129,39 @@ else((getInputId.value && getInputPass.value) == NULL) {
             background-color: #bbb;
         }
 
-        #form {
-            margin-right: auto;
-            margin-left: auto;
-            width: 500px;
-
-        }
-
+        
+        
+/*div클래스*/
         .formDiv {
             padding: 5px;
             width: 300px;
+            margin: 0px 0px;
         }
 
-        .formDiv p {
+        .formDiv p {    /*보이는대로 입력해주세요*/
             font-size: 13px;
         }
+
+
+/*span클래스*/
+        .formBox {
+            float: left;
+        }
+
+/*랜덤숫자*/
+        #randomNumber {
+            font-size: 35px;
+            font-style: italic;
+            text-align: right;
+        }
+
+#randomNumberDiv {
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
     </style>
 
 </HEAD>
@@ -140,26 +177,19 @@ else((getInputId.value && getInputPass.value) == NULL) {
 
         <form id="login_form" method="POST" action="login_ok.php">
             <div class="formDiv">
-                <span>ID</span>
                 <span class="formBox">
                     <input class="inputBox" id="inputId" type="edit" name="sign_id" value="아이디를 입력하세요" style="display: block;" />
                 </span>
             </div>
             <div class="formDiv">
-                <span>PASS</span>
                 <span class="formBox">
                     <input class="inputBox" id="inputPass" type="password" name="sign_pass" value="비밀번호를 입력하세요" />
                 </span>
             </div>
             <div class="formDiv">
-                <p>보이는대로 입력해주세요.</p>
-                <span id="randomNumber" class="formBox"></span>
-            </div>
-
-
-
-            <div class="formDiv">
-                <span>
+                <div id="randomNumberDiv"><p>보이는대로 입력해주세요.</p>
+                <span id="randomNumber"></span></div>
+                <span class="formBox">
                     <input class="inputBox" type="text" id="randomNumberInput" size=30/>
                 </span>
             </div>
